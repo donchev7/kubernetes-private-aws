@@ -8,7 +8,7 @@ data "template_file" "nodes" {
     s3_id = "${aws_s3_bucket.private-k8s-topo.id}"
     role = "node"
     volume = ""
-    proxy = "${replace("${var.proxy}", ",", " ")}"
+    proxy = "${var.proxy}"
     load_balancer_dns = "${aws_lb.master.dns_name}"
   }
 

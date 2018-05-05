@@ -145,7 +145,7 @@ cat << 'EOF' > /opt/redsocks/healthcheck.sh
 
 LOG=$(echo $0).log
 CIAS_IP_FILE=$(echo $0).cias_ip
-CIAS_IP=$(nslookup cias.geoaws.com | grep 'Address:' | grep -v '#' | sort | xargs | sed 's/Address: //g')
+CIAS_IP=$(nslookup $BASE_PROXY_HOST | grep 'Address:' | grep -v '#' | sort | xargs | sed 's/Address: //g')
 
 if [[ "$CIAS_IP" != "$(cat $CIAS_IP_FILE)" ]]; then
     echo -n "$(date) | " >> $LOG
