@@ -16,6 +16,18 @@ variable "node_instance_type" {
   default = "t2.large"
 }
 
+variable "master_asg_min" {
+  default = 1
+}
+
+variable "master_asg_max" {
+  default = 3
+}
+
+variable "master_asg_desired" {
+  default = 3
+}
+
 variable "node_asg_min" {
   default = 1
 }

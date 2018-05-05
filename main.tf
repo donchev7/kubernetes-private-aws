@@ -66,18 +66,6 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_iam_role" "k8s-cluster" {
-  name = "${var.name}"
-}
-
-#
-# AWS Instance profile
-#
-resource "aws_iam_instance_profile" "cluster" {
-  name = "ci-k8s-poc3"
-  role = "${aws_iam_role.cluster.name}"
-}
-
 #
 # Master IP for remote kubectl configuration
 #

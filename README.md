@@ -3,6 +3,9 @@
 
 The code in this repo is for provisioning a K8s in a private topology on AWS.
 
+For more information check out the [blog](https://donchev.is/post/kubernetes-in-a-private-network)
+
+
 
 ## Terraform state
 
@@ -23,7 +26,7 @@ terraform plan
 terraform apply
 ```
 
-This should give you the output of the master ips:
+This should give you the output of the NLB ip (master-ip):
 ```
 Outputs:
 
